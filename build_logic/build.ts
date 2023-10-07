@@ -35,9 +35,10 @@ function new_page(page: PageData) {
 	<meta name="description" content="${page.description}">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="${page.title}">
-	<meta property="og:site_name" content="Yumi Project Keyring">
+	<meta property="og:site_name" content="Yumi Project - Keyring">
 	<meta property="og:url" content="${ROOT_URL}${page.path}">
 	<meta property="og:description" content="${page.description}">
+	<meta name="theme-color" content="#ff4477">
 	<link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
