@@ -144,7 +144,7 @@ for await (const dir_entry of Deno.readDir("keyring")) {
 		await write_page({
 			title: key_name + " Key",
 			path: key.fancy_path,
-			description: `View details about the key "${key_name}".`,
+			description: `View details about the key &quot;${key_name}&quot;.`,
 			content: `<h1>${key_name} - <code>${key.id}</code></h1>
 
 ${description}
