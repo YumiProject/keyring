@@ -1,0 +1,13 @@
+{
+	"tasks": {
+		"build": "deno run --allow-read=. --allow-write=dist --allow-net --allow-run build_logic/build.ts",
+		"clean": "rm -r dist"
+	},
+	"importMap": "import_map.json",
+	"fmt": {
+		"options": {
+			"useTabs": true
+		}
+	},
+	"lock": false
+}

@@ -1,0 +1,58 @@
+name: "Deploy"
+
+on:
+  push:
+    branches: [ "main" ]
+  # Allows to run this workflow manually.
+  workflow_dispatch:
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: "Setup Deno"
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - name: "Build with Deno"
+        run: |
+          deno task build
+      - name: "Upload artifacts"
+        uses: actions/upload-artifact@v3
+        with:
+          name: pages
+          path: dist
+          retention-days: 1
+          if-no-files-found: error
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      deployments: write
+
+    steps:
+      - name: "Download artifacts"
+        uses: actions/download-artifact@v3
+        with:
+          name: pages
+          path: dist
+      - name: "Publish to Cloudflare Pages"
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_PAGES_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: keyring
+          directory: dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
