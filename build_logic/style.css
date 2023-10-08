@@ -24,6 +24,15 @@ a {
 	color: var(--theme_primary);
 }
 
+p {
+	margin-block-start: 0.75em;
+	margin-block-end: 0.75em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.5em;
+}
+
 header {
 	display: flex;
 	margin: 0 auto 2em;
@@ -38,6 +47,7 @@ header .wrapper {
 	font-weight: normal;
 	color: var(--theme_primary);
 	text-decoration: none;
+	text-align: center;
 }
 
 main {
@@ -121,7 +131,7 @@ pre.key_block {
 .copy_btn {
 	width: 24px;
 	height: 24px;
-	margin: auto 0 auto 1em;
+	margin: 0 0 auto 1em;
 	box-sizing: border-box;
 	cursor: pointer;
 
@@ -130,7 +140,7 @@ pre.key_block {
 	border: 1px solid transparent;
 
 	display: flex;
-	padding: 0;
+	padding: 2px;
 	align-items: center;
 	justify-content: center;
 }
