@@ -1,4 +1,4 @@
-import * as openpgp from "@openpgp";
+import * as openpgp from "openpgp";
 
 const DIST_DIR = "dist";
 const ROOT_URL = "https://keyring.yumi.dev";

@@ -1,13 +1,14 @@
 {
 	"tasks": {
-		"build": "deno run --allow-read=. --allow-write=dist --allow-net --allow-run build_logic/build.ts",
+		"build": "deno run --allow-read=. --allow-write=dist --allow-net --allow-run --allow-env=NODE_ENV build_logic/build.ts",
 		"clean": "rm -r dist"
 	},
-	"importMap": "import_map.json",
 	"fmt": {
 		"options": {
 			"useTabs": true
 		}
 	},
-	"lock": false
+	"imports": {
+		"openpgp": "npm:openpgp@^6.2.0"
+	}
 }

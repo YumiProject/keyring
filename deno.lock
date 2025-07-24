@@ -1,0 +1,16 @@
+{
+  "version": "5",
+  "specifiers": {
+    "npm:openpgp@^6.2.0": "6.2.0"
+  },
+  "npm": {
+    "openpgp@6.2.0": {
+      "integrity": "sha512-zKbgazxMeGrTqUEWicKufbdcjv2E0om3YVxw+I3hRykp8ODp+yQOJIDqIr1UXJjP8vR2fky3bNQwYoQXyFkYMA=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "npm:openpgp@^6.2.0"
+    ]
+  }
+}

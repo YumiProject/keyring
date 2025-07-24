@@ -1,5 +1,0 @@
-{
-	"imports": {
-		"@openpgp": "https://cdn.jsdelivr.net/npm/openpgp@5.10.2/dist/openpgp.mjs"
-	}
-}
